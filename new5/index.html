@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        BaseClass = function () {
+            this.doSomething = function () {
+                console.log("base class");
+            };
+        };
+    
+        DerivedClass1 = function () {
+            var bc = new BaseClass();
+            bc.doSomething = function () {
+                console.log("derived class");
+            };
+            return bc;
+        };
+    
+        DerivedClass2 = function () {
+            var bc = new BaseClass();
+            return bc;
+        }
+    
+    
+        var cls1 = new DerivedClass1();
+        cls1.doSomething();
+    
+        var cls2 = new DerivedClass2();
+        cls2.doSomething();
+    
+    
+    </script>
+    
+
+    <script src="js/main.js"></script>
+</body>
+</html>
